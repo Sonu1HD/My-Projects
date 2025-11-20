@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GYM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* background-image: url(https://maproom.net/wp-content/uploads/Maproom-World-Map-1-2.png);
+            background-attachment: fixed; */
+        }
+
+        header {
+            width: 100%;
+            /* height: 150px; */
+            background-color: rgb(236, 231, 231);
+            color: rgb(14, 14, 14);
+            /* position: sticky;
+            top: 0; */
+        }
+
+        header .head1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(236, 231, 231);
+            /* padding: 0px 0px; */
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+            display: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+            transition: all .5s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: red;
+            border-bottom: 2px solid red;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        ul li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        ul li ul {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /* ul li ul li {
+            display: block;
+        } */
+
+        ul li:hover ul {
+            display: block;
+        }
+
+        nav .logo img {
+            height: 60px;
+            padding: 30px 0;
+            border-radius: 50%;
+            /* transition: all .5s linear; */
+            animation: logo 5s linear infinite;
+
+        }
+
+        @keyframes logo {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .bottom-img img {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: floatUpDown 2s ease-in-out infinite;
+        }
+
+        @keyframes floatUpDown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .icons i {
+            color: rgb(3, 3, 3);
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: rgb(255, 255, 255);
+            padding: 5px;
+            border-radius: 50%;
+            display: none;
+            margin-top: 20px;
+        }
+
+        .bar {
+            display: block;
+            font-size: 30px;
+            cursor: pointer;
+            /* justify-content: space-between; */
+        }
+
+        .btn-1 {
+            /* margin-left: 200px; */
+            padding: 10px 20px;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+            transition: all .5s linear;
+        }
+
+        button:hover {
+            background-color: black;
+            transform: scale(1.1);
+        }
+
+        @media only screen and (min-width: 800px) {
+            nav ul {
+                display: flex;
+            }
+
+            .bar {
+                display: none;
+            }
+
+            .icons i {
+                display: inline-block;
+            }
+
+            .btn-1 {
+                display: block;
+            }
+        }
+
+        main .banner-img img {
+            width: 100%;
+            height: auto;
+            background-size: cover center;
+            /* margin-top: 30px; */
+            display: none;
+        }
+
+        .top-img img {
+            width: 100%;
+            /* height: 150px; */
+            background-size: cover center;
+            /* display: none; */
+        }
+
+        @media only screen and (min-width: 600px) {
+            .top-img img {
+                display: none;
+            }
+
+            main .banner-img img {
+                display: block;
+            }
+        }
+
+        .main-head {
+            width: 100px;
+            height: 5px;
+            background-color: red;
+            margin: 0 auto;
+            border-radius: 10px;
+
+        }
+
+        .main-head h1 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 30px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            /* margin-top: 50px; */
+            flex-direction: column;
+            background-color: #fff9f9;
+        }
+
+        section .side-video video {
+            width: 70%;
+            height: auto;
+            background-size: cover center;
+            margin-top: 60px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 60px;
+        }
+
+        @media only screen and (min-width: 800px) {
+            section {
+                flex-direction: row;
+                gap: 50px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            section p {
+                text-align: left;
+            }
+
+            .hero-section {
+                padding: 60px 20px;
+            }
+
+            .hero-section {
+                flex-wrap: wrap;
+                background-attachment: scroll;
+            }
+
+        }
+
+        .hero-section {
+            background-color: transparent;
+            padding: 40px 20px;
+            text-align: center;
+            background-image: url(https://maproom.net/wp-content/uploads/Maproom-World-Map-1-2.png);
+            background-attachment: fixed;
+
+        }
+
+        .hero-section .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #eb9e7b;
+        }
+
+        .hero-section .hero-text p {
+            font-size: 18px;
+            color: #fff6f6;
+            /* max-width: 600px; */
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .hero-section .boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .hero-section .box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-section .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section .box i {
+            font-size: 40px;
+            color: #4e73df;
+            margin-bottom: 15px;
+        }
+
+        .hero-section .box h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .hero-section .box p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .sign-up {
+            background-image: url('https://as1.ftcdn.net/jpg/03/50/81/90/1000_F_350819094_ASJQuvwGOy4BpQwb096TntNE9J1D4UP5.jpg');
+            background-size: cover;
+            color: rgb(209, 113, 23);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sign-up h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .sign-up p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .sign-up button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: white;
+            color: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-items: center;
+        }
+
+        .sign-up button:hover {
+            background-color: #eb870d;
+            color: white;
+        }
+
+        section {
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .main-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .main-box img {
+            border-radius: 50%;
+            width: 100px;
+        }
+
+        .main-box p {
+            text-align: center;
+            color: rgb(7, 7, 7);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .box,
+        .box2,
+        .box3 {
+            width: 300px;
+            height: 240px;
+            overflow: hidden;
+            /* background-color: rgb(255, 255, 255); */
+            position: relative;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .box:hover,
+        .box2:hover,
+        .box3:hover {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            transition: all .5s ease-in-out;
+        }
+
+        .feedback-page {
+            /* background-color: #f9f9f9; */
+            background-image: url(https://www.shutterstock.com/shutterstock/photos/2467623761/display_1500/stock-photo-a-young-interracial-sport-couple-dressed-in-active-wear-standing-confidently-in-front-of-a-white-2467623761.jpg);
+            background-size: cover;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .feedback-page h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #f0eaea;
+        }
+
+        .feedback-page form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .feedback-page label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #0f0e0e;
+            font-weight: bold;
+        }
+
+        .feedback-page input,
+        .feedback-page textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .feedback-page button {
+            padding: 12px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .feedback-page button:hover {
+            background-color: #e04343;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+            display: flex;
+            /* gap: 30px; */
+            justify-content: space-around;
+        }
+
+        footer .foot-panel {
+            margin-bottom: 20px;
+        }
+
+        footer .foot-panel h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        footer .foot-panel p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        footer .foot-panel button {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all .5s ease-in-out;
+        }
+
+        footer .foot-panel p:hover {
+            color: red;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        footer .foot-panel {
+            /* display: flex; */
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .foot-bottom {
+            background-color: #1f1b1b;
+            color: #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head1">
+            <h3>+91 8976834832 | customer.care@Gokusgym.in</h3>
+            <h3>Welcome to Goku Gym India.</h3>
+            <div class="icons">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+        <nav>
+            <div class="logo"><img src="Elegant Modern Gym Logo Design.png" alt="Our Logo"></div>
+            <ul>
+                <li><a href="index.html">Get Started</a></li>
+                <li class="dropdown">
+                    <a href="MyGYM.html">Fitness Institute ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="workout.html">Workouts</a></li>
+                        <li><a href="nutrition.html">Nutrition</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                    </ul>
+                </li>
+                <li><a href="AboutUs.html">Gallery</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+            <div class="bar">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+            <button class="btn-1">Free trial</button>
+        </nav>
+    </header>
+    <main>
+        <div class="top-img"><img
+                src="https://www.shutterstock.com/shutterstock/photos/519527782/display_1500/stock-vector-the-start-is-what-stops-most-people-gym-inspiring-creative-motivation-quote-template-vector-519527782.jpg"
+                alt=""></div>
+
+        <div class="banner-img">
+            <img src="Facebook Cover - Find Your Inner Peace with Goku Gym.png" alt="Banner Image">
+        </div>
+    </main>
+
+    <div class="main-head">
+        <h1>Out Legacy</h1>
+    </div>
+
+    <section>
+
+        <div class="side-video"><video src="6003998_Man_African_American_3840x2160.mp4" controls muted> </video></div>
+        <p>At Goku Gym, we believe in empowering individuals to achieve their fitness goals and lead healthier lives.
+            Our legacy is built on a foundation of dedication, expertise, and a passion for helping our members become
+            the best versions of themselves. With state-of-the-art facilities, experienced trainers, and a supportive
+            community, we strive to create an environment where everyone feels motivated and inspired to push their
+            limits. Join us on this journey to transform your body and mind, and be a part of our enduring legacy of
+            fitness excellence.</p>
+
+    </section>
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Our Business Verticals</h1>
+            <p>At Goku Gym, we offer a diverse range of business verticals to cater to the unique fitness needs of our
+                members.</p>
+        </div>
+        <div class="boxes">
+            <div class="box box1">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h1>Gym</h1>
+                <p>We are one of the largest gym chains in India with 150+ active clubs & have been in India since 2002
+                </p>
+            </div>
+            <div class="box box2">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h1>GGFI</h1>
+                <p>GGFI opened its doors for all the fitness enthusiasts in 2006 has successfully produced thousands of
+                    personal trainers and health coaches.</p>
+            </div>
+
+    </section>
+    <div class="bottom-img"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSspqMiimucuxh4kfbeTKO2ASK2fKxbA6pzAKbYc5JMNfVNqOvbxrQ36cVcbV3_o-nRv_s&usqp=CAU"
+            alt=""></div>
+
+    <div class="sign-up">
+        <h1>Book Your Free Trial</h1>
+        <p>Start Your Fitness Journey at Gold's Gym Today</p>
+        <button class="btn-2">Sign Up Me</button>
+    </div>
+    <section>
+        <div class="main-box">
+            <div class="box"><img src="https://i.pinimg.com/736x/3a/2f/9c/3a2f9ccc62097c14c2e63c3fd4d2645d.jpg" alt="">
+                <p>Goku Gym</p>
+            </div>
+            <div class="box2"><img src="Elegant Modern Gym Logo Design.png" alt="">
+                <p>Goku Gym Express</p>
+            </div>
+            <div class="box3">
+                <img src="https://media2.dayoftheshirt.com/xvxe41erxwifmwwit08p6jjy3a5z/gokus-gym-ript.jpg" alt="">
+                <p>ACTIV</p>
+            </div>
+        </div>
+    </section>
+    <div class="feedback-page">
+        <h2>We value your feedback!</h2>
+        <form id="feedbackForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="City">City</Data></label>
+            <input type="Text" id="City" name="City" placeholder="Enter your City" required>
+
+            <label for="Contact">Your Contact Number</label>
+            <input type="tel" id="Contact" name="Contact" placeholder="Enter your Contact Number" required>
+
+            <label for="message">Feedback:</label>
+            <textarea id="message" name="message" placeholder="Tell us what you think" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    <footer>
+        <div class="foot-panel">
+            <h1>Goku GYM</h1>
+            <button><i class="fa-solid fa-globe"></i>English v</button>
+        </div>
+        <div class="foot-panel">
+            <h3>Quick Links</h3>
+            <p>Get Started</p>
+            <p>Fitness Institute</p>
+            <p>Gallery</p>
+            <p>Contact Us</p>
+
+        </div>
+        <div class="foot-panel">
+            <h3>Our company</h3>
+            <p>About us</p>
+            <p>Careers</p>
+            <p>Press/media</p>
+            <p>Investor relations</p>
+            <p>Goku Gym blog</p>
+            <p>Coupons</p>
+        </div>
+        <div class="foot-panel">
+            <h3>Support</h3>
+            <p>Help/FAQ</p>
+            <p>Account</p>
+            <p>Support forum</p>
+            <p>Contact us</p>
+            <p>System requirements</p>
+            <p>Accessibility</p>
+        </div>
+        <div class="foot-panel">
+            <h1>News Letter</h1>
+            <p>sign up for our mailing list to get latest updates and offers</p>
+            <input type="email" placeholder="Enter your email"
+                style="padding: 10px; width: 80%; border-radius: 5px; border: none; margin-top: 10px;">
+            <button
+                style="padding: 10px 20px; margin-top: 10px; background-color: rgb(255, 77, 0); color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+            <div class="icons">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="foot-bottom">
+        <p>&copy; 2025 Goku Gym. All rights reserved.</p>
+        <p>Privacy Policy | Terms of Service | Cookie Policy</p>
+    </div>
+</body>
+
+</html>

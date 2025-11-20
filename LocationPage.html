@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location Page</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* review-card */
+    .review-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .review-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .review-avatar {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #0d6efd;
+    }
+
+    .star-rating {
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    .logos img {
+      max-height: 50px;
+      transition: transform 0.2s ease-in-out;
+      filter: grayscale(100%);
+    }
+
+    .logos img:hover {
+      transform: scale(1.1);
+      filter: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ================= Herosection ================= -->
+  <section class="bg-dark text-white text-center d-flex flex-column justify-content-center align-items-center"
+    style="background: url('https://images.unsplash.com/photo-1574610758891-5b809b6e6e2e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW91bnRhaW5zJTIwYnklMjBuaWdodHxlbnwwfHwwfHx8MA%3D%3D') center/cover no-repeat fixed; height: 100vh;">
+    <h1 class="display-2 fw-bold">4achievers</h1>
+    <h1 class="display-6 fw-bold">We Will Write a Headline<br>Highlighting Your Business Offerings Here</h1>
+    <p class="lead">Learn, Grow, and Explore with Our Online Education Resources</p>
+    <button type="button" class="btn btn-info btn-lg text-white bg-gradient shadow rounded-pill">
+      Our Locations
+    </button>
+  </section>
+
+  <!-- ================= About - 4Achievers ================= -->
+  <div class="container my-5">
+    <h2 class="heading-109 text-center">About - <span class="text-info">4Achievers</span></h2>
+    <p class="text-center">Do you want to take your career to the next level but don&#x27;t know where to start?
+      Check out our top trending courses that will help you become an professional.</p>
+    <div class="row">
+      <section class="text-dark">
+        <div class="container py-5">
+          <div class="row g-4 align-items-start">
+
+            <!-- Left column (steps) -->
+            <div class="col-lg-6 col-md-12">
+
+              <!-- Step 1 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Step 1</h6>
+                  <p class="mb-0">4Achievers courses are designed to help you learn new skills, access
+                    new opportunities, and develop new career paths.</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Step 2</h6>
+                  <p class="mb-0">We believe knowledge is power. Check our site frequently for the
+                    latest course program and syllabus to keep learning and growing.</p>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Placement Assistance</h6>
+                  <p class="mb-0">4Achievers provides placement assistance to help graduates secure
+                    jobs, with resources and guidance tailored to your career path.</p>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Step 4</h6>
+                  <p class="mb-0">Our team is here to help you complete your course and succeed in
+                    your career. Contact us to learn more about our programs.</p>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Step 5</h6>
+                  <p class="mb-0">In today&#x27;s world where Technical Course is playing a vital
+                    role, information is being collected at an alarming rate. The need for
+                    professionals knowledgeable about the subject and understands it well has never
+                    been more important than before. To address this need, 4Achievers Noida Project
+                    Agile Activity was established to provide the best-in-class training in the
+                    field of Technical Course and data.Technical Course has gone a long way in the
+                    last decade and has transformed many industries. There is no denying its
+                    importance in the current scenario.</p>
+                </div>
+              </div>
+
+              <!-- Step 6 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Step 6</h6>
+                  <p class="mb-0">There is a lot of confusion regarding Technical Course course in
+                    Noida where everything seems to be getting automated at an alarming pace.
+                    However, we can assure you that there are still plenty of opportunities out
+                    there for tech enthusiasts! That&#x27;s why 4Achievers has decided to come up
+                    with Technical Course course in Noida Project Agile Activity.</p>
+                </div>
+              </div>
+
+              <!-- Step 7 -->
+              <div class="d-flex pb-4">
+                <i class="fa fa-check-circle text-primary fs-1 me-2"></i>
+                <div class="flex-grow-1 ps-2">
+                  <h6 class="text-uppercase fw-bold mb-1">Step 7</h6>
+                  <p class="mb-0">4Achievers Technical Course course will teach you the basics on how
+                    to use some essential tools and softwares much more! You will also learn about
+                    upcoming technologies which will help you stay ahead of your competition and
+                    make a name for yourself as one of the most skilled professionals! So what are
+                    you waiting for? Book your seat on this ride now!</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right column (big video) -->
+            <div class="col-lg-6 col-md-12 sticky-top" style="top: 20px;">
+              <div class="ratio ratio-21x9">
+                <iframe src="https://www.youtube.com/embed/yRqkqyRmg3M"
+                  title="Data Science | Agile Activity | 21-Jan-2023 | 4Achievers | Training Institute" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ================= Collaboration ================= -->
+
+  <section class="bg-dark text-white text-center d-flex flex-column justify-content-center align-items-center"
+    style="background: url('https://dce.harvard.edu/wp-content/uploads/sites/8/2024/07/tech.jpg') center/cover no-repeat fixed; height: 100vh;">
+
+    <h1 class="display-2 fw-bold text-white mb-5">4Achievers</h1>
+
+    <div class="container bg-white text-dark rounded-3 p-4">
+      <h3 class="fw-bold mb-4">In Collaboration With</h3>
+
+      <div class="logos row justify-content-center align-items-center g-3">
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://cdn.worldvectorlogo.com/logos/ibm.svg" alt="IBM" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://cdn.worldvectorlogo.com/logos/cisco-2.svg" alt="Cisco" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://cdn.worldvectorlogo.com/logos/adobe-1.svg" alt="Adobe" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://cdn.worldvectorlogo.com/logos/autodesk-1.svg" alt="Autodesk" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://cdn.worldvectorlogo.com/logos/unity-69.svg" alt="Unity" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGT6t-BvfttGBOOp8atKz_fkcYQDpYy5E9cQ&s" alt="Intuit" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://www.exin.com/app/uploads/2022/10/Logo-New-Tagline-Colored-copy-e1694809856197.png" alt="EXIN" class="img-fluid w-75">
+        </div>
+        <div class="col-4 col-sm-3 col-md-2">
+          <img src="https://images.credly.com/images/ea6af0e3-ab84-4ba4-a48c-2d4cad3f64c6/linkedin_thumb_IC3_GS5_Digital_Literacy-01.png" alt="IC3" class="img-fluid w-75">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= Cards ================= -->
+  <div class="container my-5">
+    <h1 class="heading-109 text-center">Courses - Upgrade Your <span class="text-highlights text-info">Skills</span>
+      with <span class="text-highlights text-info">Salary Hike</span></h1>
+    <div class="uui-text-size-large text-center mb-5">You&#x27;ve worked hard all your life to achieve the skills you
+      have.
+      But is that all you&#x27;re worth? Learn more about how 4Achievers courses can help you get a salary
+      hike and expand your career prospects.</div>
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img
+            src="https://cyble.com/wp-content/uploads/2023/11/CybleBlogs-Latest-1200-%C3%97-600-px-copy-1024x512.webp"
+            class="card-img-top" alt="Cyber Defense and Penetration Testing" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Cyber Defense and Penetration Testing Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Cyber Defense and Penetration Testing Training Course Covers: Introduction | Basic | Project
+              Implementation | Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/cyber-defense-and-penetration-testing-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://www.webasha.com/uploads/bootcamp/images/66868ae5cefca1720093413.cyber-security-training.jpg"
+            class="card-img-top" alt="Cyber Forensics" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Cyber Forensics Analysis and Investigation Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Cyber Forensics Analysis and Investigation Training Course Covers: Introduction | Basic |
+              Project Implementation | Testing | Architecture | Advance Learning | Interview Preparation | JOB
+              Assistance.
+            </p>
+            <a href="https://4achievers.com/cyber-forensics-analysis-and-investigation-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://iirfranking.com/courses/wp-content/uploads/2022/07/Cyber-Security.jpeg" class="card-img-top"
+            alt="Network Vulnerability" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Network Vulnerability Testing Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Network Vulnerability Testing Training Course Covers: Introduction | Basic | Project
+              Implementation | Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/network-vulnerability-testing-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://perscholas.org/wp-content/uploads/2020/07/Cyber-YouTube-Cover.png" class="card-img-top"
+            alt="EC Council Certifications" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              EC Council Certifications Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers EC Council Certifications Training Course Covers: Introduction | Basic | Project Implementation
+              | Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/ec-council-certifications-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUdhPbLPOWMmvyyWtCw6brk3QaIN7L71SCkg&s"
+            class="card-img-top" alt="CompTia Certifications" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              CompTia Certifications Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers CompTia Certifications Training Course Covers: Introduction | Basic | Project Implementation |
+              Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/comptia-certifications-in-noida"
+              class="btn btn-primary w-100 fw-semibold mt-4">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://graduate.nichols.edu/wp-content/uploads/2023/06/cybersecurity-jobs.jpeg"
+            class="card-img-top" alt="Chat GPT Generative AI" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Chat GPT Generative AI Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Chat GPT Generative AI Training Course Covers: Introduction | Basic | Project Implementation |
+              Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/chat-gpt-generative-ai-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLOWBT5AhFY3JswsCi1Y_aDxgb7cXjHasiyw&s"
+            class="card-img-top" alt="Playwright Training" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Playwright Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Playwright Training Course Covers: Introduction | Basic | Project Implementation | Testing |
+              Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/playwright-in-noida"
+              class="btn btn-primary w-100 fw-semibold mt-5">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://miro.medium.com/0*-KZHbasLoWUx1kaN.jpg" class="card-img-top" alt="Oracle EBS ERP"
+            style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Oracle EBS ERP Techno Functional Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Oracle EBS ERP Techno Functional Training in Noida Course Covers: Introduction | Basic |
+              Project Implementation | Testing | Architecture | Advance Learning | Interview Preparation | JOB
+              Assistance.
+            </p>
+            <a href="https://4achievers.com/oracle-ebs-erp-techno-functional-training-in-noida"
+              class="btn btn-primary w-100 fw-semibold mt-4">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img
+            src="https://www.mphasis.com/content/dam/mphasis-com/global/en/home/services/application-services/erp/oracle-erp/oracle-erp-1.jpg.thumb.468.468.png"
+            class="card-img-top" alt="Oracle EBS ERP" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Oracle Fusion Cloud ERP Functional Training in Noida
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Oracle Fusion Cloud ERP Functional Training in Noida Course Covers: Introduction | Basic |
+              Project Implementation | Testing | Architecture | Advance Learning | Interview Preparation | JOB
+              Assistance.
+            </p>
+            <a href="https://4achievers.com/oracle-ebs-erp-techno-functional-training-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://miro.medium.com/1*JA-NtaBmQLmLDFvaiq_UDw.jpeg" class="card-img-top" alt="Oracle EBS ERP"
+            style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              Data Engineering Training
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers Data Engineering Training in Noida Course Covers: Introduction | Basic | Project Implementation
+              | Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/oracle-ebs-erp-techno-functional-training-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://www.classcentral.com/report/wp-content/uploads/2022/06/SQL-BCG-Banner-2.png"
+            class="card-img-top" alt="Oracle EBS ERP" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              SQL Training
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers SQL Training in Noida Course Covers: Introduction | Basic | Project Implementation | Testing |
+              Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/oracle-ebs-erp-techno-functional-training-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+          <img src="https://cdn.shopaccino.com/igmguru/products/1-1164328602338466_m.jpg?v=532" class="card-img-top"
+            alt="Oracle EBS ERP" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">
+              PySpark Training
+            </h5>
+            <p class="card-text text-muted">
+              4Achievers PySpark Training in Noida Course Covers: Introduction | Basic | Project Implementation |
+              Testing | Architecture | Advance Learning | Interview Preparation | JOB Assistance.
+            </p>
+            <a href="https://4achievers.com/oracle-ebs-erp-techno-functional-training-in-noida"
+              class="btn btn-primary w-100 fw-semibold">Details</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= Reviews ================= -->
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="text-uppercase text-primary">Unleash Your Career Potential with Cutting-Edge Technical Courses in
+        Noida: Acquire In-Demand Technical Proficiencies</h2>
+      <p class="fw-bold">Gain cutting-edge skills and boost your career with our
+        industry-relevant Noida. Transform your professional path with practical
+        knowledge, and the latest digital tools. Join Now !</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Review 1 -->
+      <div class="col-md-4">
+        <div class="card p-4 text-center review-card h-100">
+          <img src="https://static.dezeen.com/uploads/2025/05/sq-google-g-logo-update_dezeen_2364_col_0-852x852.jpg"
+            alt="User 1" class="review-avatar mx-auto">
+          <h5 class="fw-bold">Google</h5>
+          <p class="star-rating">★★★★★</p>
+          <p>"Amazing service! The team went above and beyond my expectations. Highly recommend to anyone looking for
+            quality."</p>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="col-md-4">
+        <div class="card p-4 text-center review-card h-100">
+          <img src="https://cdn-1.webcatalog.io/catalog/justdial/justdial-social-preview.png?v=1714777658009"
+            alt="User 2" class="review-avatar mx-auto">
+          <h5 class="fw-bold">JustDial</h5>
+          <p class="star-rating">★★★★☆</p>
+          <p>"Very professional and responsive. The results were fantastic, and I’ll definitely be coming back."</p>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="col-md-4">
+        <div class="card p-4 text-center review-card h-100">
+          <img src="https://cdn.theorg.com/0f7cf6b4-37a7-4a80-b291-8d4dbb053c11_medium.jpg" alt="User 3"
+            class="review-avatar mx-auto">
+          <h5 class="fw-bold">Sulekha</h5>
+          <p class="star-rating">★★★★★</p>
+          <p>"From start to finish, the experience was seamless. Great attention to detail and friendly staff."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

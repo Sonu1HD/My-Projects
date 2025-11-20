@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Traveller</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <style>
+        nav {
+            display: flex;
+            margin: 20px;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        ul {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+        }
+        ul :hover{
+            color: #504f4f;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #2887ff;
+            border-radius: 80px;
+            cursor: pointer;
+        }
+        button :hover {
+            background-color: #0056b3;
+            color: black;
+        }
+
+        @media only screen and (max-width: 992px) {
+            .herosection {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .herosection img {
+                max-width: 80%;
+            }
+
+            .herosection p {
+                font-size: 40px;
+            }
+
+            .herosection2 {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mainbox {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            .hero-text2 {
+                margin-left: none;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center
+            }
+
+            input {
+                width: 100%
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            ul {
+                justify-content: center;
+            }
+
+            .herosection {
+                padding: 30px 15px;
+            }
+
+            .herosection p {
+                font-size: 32px;
+            }
+
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        .herosection {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-left: 5%;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: url("blue-sky-clouds.jpg") no-repeat center center/cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+        }
+
+        .herosection img {
+            position: absolute;
+            bottom: -68px;
+            right: 16%;
+            max-width: 600px;
+            height: auto;
+        }
+
+        .herosection h3 {
+            font-size: 19.2px;
+            margin-bottom: 16px;
+        }
+
+        .herosection p {
+            font-size: 70px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2887ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        .hero-btn:hover {
+            background-color: #0056b3;
+            color: black;
+        }
+
+        .herosection2 {
+            display: flex;
+        }
+
+        .hero-text h3 {
+            font-size: 40px;
+        }
+
+        .hero-text2 {
+            margin-left: 150px;
+        }
+
+        .hero-text2 p {
+            font-size: 16px;
+            color: grey;
+            line-height: 1.5px;
+        }
+
+        .hero-text2 h3 {
+            font-size: 40px;
+
+        }
+
+        .mainbox {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            align-items: center;
+            /* margin-left: 200px; */
+            margin-top: 30px;
+        }
+
+        span button {
+            padding: 7px 10px;
+            border: none;
+            font-size: 13px;
+            color: #fff;
+            background-color: #2887ff;
+            border-radius: 80px;
+            cursor: pointer;
+        }
+
+        .box img {
+            width: 350px;
+            border-radius: 30px;
+        }
+
+        .herosection3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .text-sec {
+            text-align: center;
+        }
+
+        .card {
+            display: flex;
+            /* justify-content: space-between; */
+            gap: 32px;
+            align-items: center;
+            margin-left: 8px;
+            margin-top: 30px;
+            padding: 56px 36px;
+            background: #f8f9fa;
+            margin-bottom: 40px;
+
+        }
+
+        .card i {
+            font-size: 28px;
+            color: #2887ff;
+            margin-bottom: 15px;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            padding: 30px;
+            background: #f8f9fa
+        }
+
+        .col {
+            flex: 1;
+            min-width: 200px
+        }
+
+        h3 {
+            margin-bottom: 10px
+        }
+
+        p,
+        a {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            margin: 5px 0;
+            display: block
+        }
+
+        a:hover {
+            color: #1877f2
+        }
+
+        .social {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social a {
+            margin-right: 8px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 34px;
+            border-radius: 50%;
+            background: #2887ff;
+        }
+
+        input {
+            padding: 8px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 4px
+        }
+
+        button {
+            padding: 9px 15px;
+            border: none;
+            background: #1877f2;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer
+        }
+
+        .bottom {
+            text-align: center;
+            padding: 10px;
+            background: #eee;
+            font-size: 13px
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>BusTraveller</h1>
+        </div>
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>TOUR</li>
+            <li>PACKAGE</li>
+            <li>CONTACT</li>
+        </ul>
+        <button>Book Trip</button>
+    </nav>
+
+    <div class="herosection">
+        <div class="hero-text">
+            <h3>BUS YOUR TRAVEL JOURNEY</h3>
+            <p>Where Every<br>Bus Ride Feels<br>Magical!</p>
+            <a href="#" class="hero-btn">Book A Trip Now</a>
+        </div>
+        <img src="https://themewagon.github.io/BusTraveller/img/bus.png" alt="Bus">
+    </div>
+    <div class="herosection2">
+        <div class="hero-text2">
+            <h3>Popular Destination</h3>
+            <p>Discover the Most Loved Destination Around the Globe</p>
+        </div>
+    </div>
+    <div class="mainbox">
+        <div class="box">
+            <img src="https://themewagon.github.io/BusTraveller/img/card.jpg" alt="">
+            <h3>Sacred Calm at Badrinath Temple.</h3>
+            <span>
+                <p>Badrinath, Uttarakhand, India</p><button><i class="fa-solid fa-star"></i>4.7</button>
+            </span>
+
+        </div>
+        <div class="box">
+            <img src="https://themewagon.github.io/BusTraveller/img/card2.jpg" alt="">
+            <h3>Divine Majesty at Jagannath Temple.</h3>
+            <span>
+                <p>Puri, Odisha, India</p><button><i class="fa-solid fa-star"></i>4.7</button>
+            </span>
+
+        </div>
+        <div class="box">
+            <img src="https://themewagon.github.io/BusTraveller/img/card3.webp" alt="">
+            <h3>Spiritual Serenity at Neem Karoli Temple.</h3>
+            <span>
+                <p>Dehradun, India</p><button><i class="fa-solid fa-star"></i>4.7</button>
+            </span>
+
+        </div>
+
+    </div>
+    <div class="herosection3">
+        <div class="text-sec">
+            <h2>Bus Travel, the Easy Way!</h2>
+            <p>Effortless planning for Your Next Adventure</p>
+        </div>
+
+
+    </div>
+    <div class="boxes">
+        <div class="card">
+            <i class="fa-regular fa-bookmark"></i>
+            <h3>Seamless Booking Process</h3>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-mountain"></i>
+            <h3>Tailored Itineraries</h3>
+        </div>
+        <div class="card">
+            <i class="fa-regular fa-map"></i>
+            <h3>Expert Local Insights</h3>
+        </div>
+    </div>
+    <footer>
+        <div class="col">
+            <h3>BusTraveller</h3>
+            <p>Explore the world with ease through our all-in-one bus travel platform.</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a><a href="#">Bus</a><a href="#">Hotels</a><a href="#">Cruise</a>
+        </div>
+        <div class="col">
+            <h3>Contact Us</h3>
+            <p><i class="fa-solid fa-phone"></i> +91 12345 67890</p>
+            <p><i class="fa-solid fa-envelope"></i> info@BusTraveller</p>
+            <p><i class="fa-solid fa-location-dot"></i> Agra, India</p>
+        </div>
+        <div class="col">
+            <h3>Subscribe</h3>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </div>
+    </footer>
+    <div class="bottom">© 2025 Code Prashtt. Distributed by ThemeWagon</div>
+</body>
+
+</html>
