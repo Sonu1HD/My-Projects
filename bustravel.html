@@ -2,418 +2,187 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bus Traveller</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <style>
-        nav {
-            display: flex;
-            margin: 20px;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        ul {
-            display: flex;
-            gap: 20px;
-            list-style-type: none;
-        }
-        ul :hover{
-            color: #504f4f;
-        }
-
-        button {
-            padding: 12px 30px;
-            border: none;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #2887ff;
-            border-radius: 80px;
-            cursor: pointer;
-        }
-        button :hover {
-            background-color: #0056b3;
-            color: black;
-        }
-
-        @media only screen and (max-width: 992px) {
-            .herosection {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
-            }
-
-            .hero-text {
-                max-width: 100%;
-                margin-bottom: 30px;
-            }
-
-            .herosection img {
-                max-width: 80%;
-            }
-
-            .herosection p {
-                font-size: 40px;
-            }
-
-            .herosection2 {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .mainbox {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
-            }
-            .hero-text2 {
-                margin-left: none;
-            }
-            footer {
-                flex-direction: column;
-                text-align: center
-            }
-
-            input {
-                width: 100%
-            }
-        }
-
-        @media only screen and (max-width: 576px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            ul {
-                justify-content: center;
-            }
-
-            .herosection {
-                padding: 30px 15px;
-            }
-
-            .herosection p {
-                font-size: 32px;
-            }
-
-            .hero-btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
-
-        .herosection {
-            position: relative;
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            padding-left: 5%;
-            color: black;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background: url("blue-sky-clouds.jpg") no-repeat center center/cover;
-            background-repeat: no-repeat;
-            border-radius: 20px;
-        }
-
-        .herosection img {
-            position: absolute;
-            bottom: -68px;
-            right: 16%;
-            max-width: 600px;
-            height: auto;
-        }
-
-        .herosection h3 {
-            font-size: 19.2px;
-            margin-bottom: 16px;
-        }
-
-        .herosection p {
-            font-size: 70px;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .hero-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #2887ff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-        }
-
-        .hero-btn:hover {
-            background-color: #0056b3;
-            color: black;
-        }
-
-        .herosection2 {
-            display: flex;
-        }
-
-        .hero-text h3 {
-            font-size: 40px;
-        }
-
-        .hero-text2 {
-            margin-left: 150px;
-        }
-
-        .hero-text2 p {
-            font-size: 16px;
-            color: grey;
-            line-height: 1.5px;
-        }
-
-        .hero-text2 h3 {
-            font-size: 40px;
-
-        }
-
-        .mainbox {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            align-items: center;
-            /* margin-left: 200px; */
-            margin-top: 30px;
-        }
-
-        span button {
-            padding: 7px 10px;
-            border: none;
-            font-size: 13px;
-            color: #fff;
-            background-color: #2887ff;
-            border-radius: 80px;
-            cursor: pointer;
-        }
-
-        .box img {
-            width: 350px;
-            border-radius: 30px;
-        }
-
-        .herosection3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 20px;
-        }
-
-        .text-sec {
-            text-align: center;
-        }
-
-        .card {
-            display: flex;
-            /* justify-content: space-between; */
-            gap: 32px;
-            align-items: center;
-            margin-left: 8px;
-            margin-top: 30px;
-            padding: 56px 36px;
-            background: #f8f9fa;
-            margin-bottom: 40px;
-
-        }
-
-        .card i {
-            font-size: 28px;
-            color: #2887ff;
-            margin-bottom: 15px;
-        }
-
-        .boxes {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-between;
-            padding: 30px;
-            background: #f8f9fa
-        }
-
-        .col {
-            flex: 1;
-            min-width: 200px
-        }
-
-        h3 {
-            margin-bottom: 10px
-        }
-
-        p,
-        a {
-            font-size: 14px;
-            color: #333;
-            text-decoration: none;
-            margin: 5px 0;
-            display: block
-        }
-
-        a:hover {
-            color: #1877f2
-        }
-
-        .social {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .social a {
-            margin-right: 8px;
-            font-size: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 36px;
-            height: 34px;
-            border-radius: 50%;
-            background: #2887ff;
-        }
-
-        input {
-            padding: 8px;
-            width: 70%;
-            border: 1px solid #ccc;
-            border-radius: 4px
-        }
-
-        button {
-            padding: 9px 15px;
-            border: none;
-            background: #1877f2;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer
-        }
-
-        .bottom {
-            text-align: center;
-            padding: 10px;
-            background: #eee;
-            font-size: 13px
-        }
-    </style>
 </head>
 
-<body>
-    <nav>
-        <div class="logo">
-            <h1>BusTraveller</h1>
-        </div>
-        <ul>
-            <li>HOME</li>
-            <li>ABOUT</li>
-            <li>TOUR</li>
-            <li>PACKAGE</li>
-            <li>CONTACT</li>
+<body class="font-sans bg-white text-gray-900">
+
+    <!-- NAVBAR -->
+    <nav class="flex items-center justify-between px-6 py-4 md:px-12 shadow-sm">
+        <h1 class="text-2xl font-bold">BusTraveller</h1>
+
+        <ul class="hidden md:flex gap-8 text-lg font-medium">
+            <li class="hover:text-gray-600 cursor-pointer">HOME</li>
+            <li class="hover:text-gray-600 cursor-pointer">ABOUT</li>
+            <li class="hover:text-gray-600 cursor-pointer">TOUR</li>
+            <li class="hover:text-gray-600 cursor-pointer">PACKAGE</li>
+            <li class="hover:text-gray-600 cursor-pointer">CONTACT</li>
         </ul>
-        <button>Book Trip</button>
+
+        <button class="hidden md:block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+            Book Trip
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <i class="fa-solid fa-bars md:hidden text-2xl"></i>
     </nav>
 
-    <div class="herosection">
-        <div class="hero-text">
-            <h3>BUS YOUR TRAVEL JOURNEY</h3>
-            <p>Where Every<br>Bus Ride Feels<br>Magical!</p>
-            <a href="#" class="hero-btn">Book A Trip Now</a>
-        </div>
-        <img src="https://themewagon.github.io/BusTraveller/img/bus.png" alt="Bus">
-    </div>
-    <div class="herosection2">
-        <div class="hero-text2">
-            <h3>Popular Destination</h3>
-            <p>Discover the Most Loved Destination Around the Globe</p>
-        </div>
-    </div>
-    <div class="mainbox">
-        <div class="box">
-            <img src="https://themewagon.github.io/BusTraveller/img/card.jpg" alt="">
-            <h3>Sacred Calm at Badrinath Temple.</h3>
-            <span>
-                <p>Badrinath, Uttarakhand, India</p><button><i class="fa-solid fa-star"></i>4.7</button>
-            </span>
+    <!-- HERO SECTION -->
+    <section class="w-full bg-cover bg-center rounded-xl mx-auto my-6 px-6 py-16 md:px-14 md:py-20 flex flex-col-reverse md:flex-row items-center justify-between"
+        style="background-image: url('blue-sky-clouds.jpg');">
 
-        </div>
-        <div class="box">
-            <img src="https://themewagon.github.io/BusTraveller/img/card2.jpg" alt="">
-            <h3>Divine Majesty at Jagannath Temple.</h3>
-            <span>
-                <p>Puri, Odisha, India</p><button><i class="fa-solid fa-star"></i>4.7</button>
-            </span>
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <h3 class="text-lg md:text-xl font-semibold mb-3">
+                BUS YOUR TRAVEL JOURNEY
+            </h3>
 
-        </div>
-        <div class="box">
-            <img src="https://themewagon.github.io/BusTraveller/img/card3.webp" alt="">
-            <h3>Spiritual Serenity at Neem Karoli Temple.</h3>
-            <span>
-                <p>Dehradun, India</p><button><i class="fa-solid fa-star"></i>4.7</button>
-            </span>
+            <p class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Where Every <br> Bus Ride Feels <br> Magical!
+            </p>
 
+            <a href="#"
+                class="inline-block bg-blue-500 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-700">
+                Book A Trip Now
+            </a>
         </div>
 
-    </div>
-    <div class="herosection3">
-        <div class="text-sec">
-            <h2>Bus Travel, the Easy Way!</h2>
-            <p>Effortless planning for Your Next Adventure</p>
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="https://themewagon.github.io/BusTraveller/img/bus.png"
+                alt="Bus"
+                class="w-72 md:w-[420px] lg:w-[480px] object-contain" />
         </div>
+    </section>
 
+    <!-- POPULAR DESTINATION -->
+    <section class="text-center my-10 px-4">
+        <h3 class="text-3xl md:text-4xl font-bold">Popular Destination</h3>
+        <p class="text-gray-500 mt-2">Discover the Most Loved Destination Around the Globe</p>
+    </section>
 
-    </div>
-    <div class="boxes">
-        <div class="card">
-            <i class="fa-regular fa-bookmark"></i>
-            <h3>Seamless Booking Process</h3>
-        </div>
-        <div class="card">
-            <i class="fa-solid fa-mountain"></i>
-            <h3>Tailored Itineraries</h3>
-        </div>
-        <div class="card">
-            <i class="fa-regular fa-map"></i>
-            <h3>Expert Local Insights</h3>
-        </div>
-    </div>
-    <footer>
-        <div class="col">
-            <h3>BusTraveller</h3>
-            <p>Explore the world with ease through our all-in-one bus travel platform.</p>
-            <div class="social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+    <!-- CARDS -->
+    <section class="flex flex-wrap justify-center gap-10 px-6">
+        <!-- Box 1 -->
+        <div class="w-[300px] text-center">
+            <img src="https://themewagon.github.io/BusTraveller/img/card.jpg"
+                class="rounded-2xl w-full" />
+            <h3 class="text-xl font-semibold mt-3">Sacred Calm at Badrinath Temple.</h3>
+
+            <div class="flex justify-between items-center mt-2">
+                <p class="text-gray-500">Badrinath, Uttarakhand, India</p>
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                    <i class="fa-solid fa-star"></i> 4.7
+                </button>
             </div>
         </div>
-        <div class="col">
-            <h3>Quick Links</h3>
-            <a href="#">Home</a><a href="#">Bus</a><a href="#">Hotels</a><a href="#">Cruise</a>
+
+        <!-- Box 2 -->
+        <div class="w-[300px] text-center">
+            <img src="https://themewagon.github.io/BusTraveller/img/card2.jpg"
+                class="rounded-2xl w-full" />
+            <h3 class="text-xl font-semibold mt-3">Divine Majesty at Jagannath Temple.</h3>
+
+            <div class="flex justify-between items-center mt-2">
+                <p class="text-gray-500">Puri, Odisha, India</p>
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                    <i class="fa-solid fa-star"></i> 4.7
+                </button>
+            </div>
         </div>
-        <div class="col">
-            <h3>Contact Us</h3>
-            <p><i class="fa-solid fa-phone"></i> +91 12345 67890</p>
+
+        <!-- Box 3 -->
+        <div class="w-[300px] text-center">
+            <img src="https://themewagon.github.io/BusTraveller/img/card3.webp"
+                class="rounded-2xl w-full" />
+            <h3 class="text-xl font-semibold mt-3">Spiritual Serenity at Neem Karoli Temple.</h3>
+
+            <div class="flex justify-between items-center mt-2">
+                <p class="text-gray-500">Dehradun, India</p>
+                <button class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                    <i class="fa-solid fa-star"></i> 4.7
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIDDLE SECTION -->
+    <section class="text-center py-16">
+        <h2 class="text-3xl md:text-4xl font-bold">Bus Travel, the Easy Way!</h2>
+        <p class="text-gray-500 mt-2">Effortless planning for Your Next Adventure</p>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="flex flex-wrap justify-center gap-6 px-6">
+        <div class="w-64 bg-gray-100 p-6 rounded-xl text-center">
+            <i class="fa-regular fa-bookmark text-blue-500 text-3xl mb-3"></i>
+            <h3 class="font-semibold text-lg">Seamless Booking Process</h3>
+        </div>
+
+        <div class="w-64 bg-gray-100 p-6 rounded-xl text-center">
+            <i class="fa-solid fa-mountain text-blue-500 text-3xl mb-3"></i>
+            <h3 class="font-semibold text-lg">Tailored Itineraries</h3>
+        </div>
+
+        <div class="w-64 bg-gray-100 p-6 rounded-xl text-center">
+            <i class="fa-regular fa-map text-blue-500 text-3xl mb-3"></i>
+            <h3 class="font-semibold text-lg">Expert Local Insights</h3>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 mt-12 px-8 py-10 flex flex-wrap gap-10 justify-between">
+        <div class="min-w-[200px]">
+            <h3 class="text-xl font-bold">BusTraveller</h3>
+            <p class="text-gray-600 mt-2">Explore the world with ease through our all-in-one bus travel platform.</p>
+
+            <div class="flex gap-4 mt-4">
+                <a class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center text-white">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center text-white">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center text-white">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="min-w-[200px]">
+            <h3 class="text-xl font-bold">Quick Links</h3>
+            <ul class="mt-2 text-gray-600">
+                <li>Home</li>
+                <li>Bus</li>
+                <li>Hotels</li>
+                <li>Cruise</li>
+            </ul>
+        </div>
+
+        <div class="min-w-[200px]">
+            <h3 class="text-xl font-bold">Contact Us</h3>
+            <p class="mt-2"><i class="fa-solid fa-phone"></i> +91 12345 67890</p>
             <p><i class="fa-solid fa-envelope"></i> info@BusTraveller</p>
             <p><i class="fa-solid fa-location-dot"></i> Agra, India</p>
         </div>
-        <div class="col">
-            <h3>Subscribe</h3>
-            <input type="email" placeholder="Enter your email">
-            <button>Subscribe</button>
+
+        <div class="min-w-[200px]">
+            <h3 class="text-xl font-bold">Subscribe</h3>
+            <input type="email" placeholder="Enter your email"
+                class="w-full mt-2 p-2 border rounded-md" />
+            <button class="bg-blue-500 w-full mt-3 text-white py-2 rounded-md">
+                Subscribe
+            </button>
         </div>
     </footer>
-    <div class="bottom">© 2025 Code Prashtt. Distributed by ThemeWagon</div>
+
+    <div class="bg-gray-200 text-center py-3 text-sm">
+        © 2025 Code Prashtt. Distributed by ThemeWagon
+    </div>
+
 </body>
 
 </html>

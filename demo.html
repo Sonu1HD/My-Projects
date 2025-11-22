@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white text-black transition-all duration-300" id="body">
+    <header class="m-5">
+        <nav id="navbar" class="flex justify-around font-bold bg-black text-white p-6 rounded-2xl">
+            <div class="logo text-2xl">LOGO</div>
+            <ul class="flex gap-4 py-2">
+                <li>Home</li>
+                <li>Contact</li>
+                <li>Service</li>
+                <li>Portfolio</li>
+                <li>About</li>
+            </ul>
+            <button id="darkmode" class="bg-gray-800 text-center w-10 h-10 rounded-[50%]">
+                ☀️
+            </button>
+        </nav>
+    </header>
+
+    <section>
+        <div class="text-sec p-6 text-center text-3xl">
+            <h1>Hello...</h1>
+            <p class="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis excepturi corporis labore?
+                Error, corrupti nisi eos veritatis repudiandae voluptatum quisquam perferendis vitae suscipit quaerat,
+                eius qui quod consectetur obcaecati aliquid?</p>
+        </div>
+    </section>
+    <script>
+        const toggleBtn = document.getElementById("darkmode");
+        const body = document.getElementById("body");
+        const navbar = document.getElementById("navbar");
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("bg-black")
+            body.classList.toggle("bg-white")
+
+            navbar.classList.toggle("bg-white")
+            navbar.classList.toggle("bg-black")
+
+            navbar.classList.toggle("text-black")
+            navbar.classList.toggle("text-white")
+
+            body.classList.toggle("text-black");
+            body.classList.toggle("text-white");
+
+            if (body.classList.contains("bg-black")) {
+                toggleBtn.textContent = "☀️";
+            } else {
+                toggleBtn.textContent = "🌙";
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,10 @@
     <title>My GYM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -419,6 +423,64 @@
             font-weight: bold;
         }
 
+        /* -------------------------------------------------------
+   GALLERY SECTION (FLEXBOX)
+--------------------------------------------------------- */
+
+.gallery-section {
+    padding: 50px 20px;
+    background: #fff9f9;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.gallery-line {
+    width: 120px;
+    height: 5px;
+    background: red;
+    margin: 10px auto 30px auto;
+    border-radius: 5px;
+}
+
+/* FLEX CONTAINER */
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* EACH IMAGE BOX */
+.gallery-item {
+    width: 300px;      /* fixed width but wraps automatically */
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* IMAGE STYLING */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+/* Hover zoom effect */
+.gallery-item:hover img {
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+
+
+
         .box,
         .box2,
         .box3 {
@@ -444,7 +506,7 @@
 
         .feedback-page {
             /* background-color: #f9f9f9; */
-            background-image: url(https://www.shutterstock.com/shutterstock/photos/2467623761/display_1500/stock-photo-a-young-interracial-sport-couple-dressed-in-active-wear-standing-confidently-in-front-of-a-white-2467623761.jpg);
+            background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3ltfGVufDB8fDB8fHww');
             background-size: cover;
             padding: 40px 20px;
             text-align: center;
@@ -467,19 +529,33 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #0f0e0e;
+            color: #eae6e6;
             font-weight: bold;
+            text-align: center;
+            text-shadow: rgb(241, 240, 243) 0px 0px;
         }
 
         .feedback-page input,
         .feedback-page textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            width: 70%;
+            padding: 14px;
+            margin: 0 auto 20px auto;
+            display: block;
+            border: 1px solid #ffffff66;
+            border-radius: 6px;
+            background: #ffffffdd;
+            font-size: 17px;
+            color: #000;
+            outline: none;
+            transition: 0.3s ease;
         }
+
+        .feedback-page input:focus,
+        .feedback-page textarea:focus {
+            border-color: #ff4d4d;
+            box-shadow: 0 0 6px #ff4d4daa;
+        }
+
 
         .feedback-page button {
             padding: 12px 20px;
@@ -563,7 +639,8 @@
 </head>
 
 <body>
-    <header>
+    <!-- <! -------------------- HEADER -------------------- > -->
+    <header id="header">
         <div class="head1">
             <h3>+91 8976834832 | customer.care@Gokusgym.in</h3>
             <h3>Welcome to Goku Gym India.</h3>
@@ -587,8 +664,8 @@
                         <li><a href="trainers.html">Trainers</a></li>
                     </ul>
                 </li>
-                <li><a href="AboutUs.html">Gallery</a></li>
-                <li><a href="ContactUs.html">Contact Us</a></li>
+                <li><a href="#Gallery-page">Gallery</a></li>
+                <li><a href="#FB-page">Contact Us</a></li>
             </ul>
             <div class="bar">
                 <i class="fa-solid fa-bars-staggered"></i>
@@ -596,13 +673,15 @@
             <button class="btn-1">Free trial</button>
         </nav>
     </header>
+    <!-- <! -------------------- Banner image -------------------- > -->
     <main>
         <div class="top-img"><img
-                src="https://www.shutterstock.com/shutterstock/photos/519527782/display_1500/stock-vector-the-start-is-what-stops-most-people-gym-inspiring-creative-motivation-quote-template-vector-519527782.jpg"
+                src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3ltfGVufDB8fDB8fHww"
                 alt=""></div>
 
         <div class="banner-img">
-            <img src="Facebook Cover - Find Your Inner Peace with Goku Gym.png" alt="Banner Image">
+            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGd5bXxlbnwwfHwwfHx8MA%3D%3D"
+                alt="Banner Image">
         </div>
     </main>
 
@@ -610,6 +689,7 @@
         <h1>Out Legacy</h1>
     </div>
 
+    <!-- <! -------------------- Hero -------------------- > -->
     <section>
 
         <div class="side-video"><video src="6003998_Man_African_American_3840x2160.mp4" controls muted> </video></div>
@@ -644,8 +724,50 @@
     </section>
     <div class="bottom-img"><img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSspqMiimucuxh4kfbeTKO2ASK2fKxbA6pzAKbYc5JMNfVNqOvbxrQ36cVcbV3_o-nRv_s&usqp=CAU"
-            alt=""></div>
+            alt="bottom-img"></div>
 
+    <!-- <! -------------------- Gallery-Section -------------------- > -->
+    <section id="Gallery-page" class="gallery-section">
+        <h1 class="gallery-title">Our Gallery</h1>
+        <div class="gallery-line"></div>
+
+        <div class="gallery-container">
+
+            <!-- 🖼️ Gallery Image 1 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=800" alt="Gym Training 1">
+            </div>
+
+            <!-- 🖼️ Gallery Image 2 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGd5bXxlbnwwfHwwfHx8MA%3D%3D" alt="Gym Training 2">
+            </div>
+
+            <!-- 🖼️ Gallery Image 3 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=800" alt="Gym Workout 3">
+            </div>
+
+            <!-- 🖼️ Gallery Image 4 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800" alt="Gym Equipment 4">
+            </div>
+
+            <!-- 🖼️ Gallery Image 5 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" alt="Gym 5">
+            </div>
+
+            <!-- 🖼️ Gallery Image 6 -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGd5bXxlbnwwfHwwfHx8MA%3D%3D" alt="Gym 6">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- <! -------------------- feed-back and sign-up -------------------- > -->
     <div class="sign-up">
         <h1>Book Your Free Trial</h1>
         <p>Start Your Fitness Journey at Gold's Gym Today</p>
@@ -665,7 +787,7 @@
             </div>
         </div>
     </section>
-    <div class="feedback-page">
+    <div id="FB-page" class="feedback-page">
         <h2>We value your feedback!</h2>
         <form id="feedbackForm">
             <label for="name">Your Name:</label>

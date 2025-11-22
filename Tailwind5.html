@@ -7,6 +7,7 @@
     <title>Coffee</title>
     <link rel="stylesheet" href="./src/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
@@ -224,48 +225,74 @@
     </section>
     <footer
         class="bg-[url(https://5.imimg.com/data5/SELLER/Default/2021/8/AP/WL/GJ/5504430/roasted-coffee-beans.jpg)] bg-cover bg-center">
-        <div class="min-h-screen flex items-center justify-center bg-black bg-opacity-70">
-            <div class="main-foot flex flex-wrap justify-around gap-10">
-                <div class="foot1 ">
+        <div class="w-full py-20 bg-black bg-opacity-70 flex justify-center">
+
+            <div class="main-foot w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 px-6">
+
+                <!-- Get In Touch -->
+                <div class="space-y-3">
                     <h1 class="text-3xl font-bold">Get In Touch</h1>
-                    <ul>
-                        <li class="text-base/8">🌍123 Street, New York, USA</li>
-                        <li class="text-base/8">📞+012 345 67890</li>
-                        <li class="text-base/8">📩info@example.com</li>
+                    <ul class="space-y-1 text-gray-300">
+                        <li>🌍 123 Street, New York, USA</li>
+                        <li>📞 +012 345 67890</li>
+                        <li>📩 info@example.com</li>
                     </ul>
                 </div>
-                <div class="foot2 flex-wrap px3">
+
+                <!-- Follow Us -->
+                <div class="space-y-3">
                     <h1 class="text-3xl font-bold">Follow Us</h1>
-                    <p class="text-base/8">Amet elitr vero magna sed ipsum sit<br> kasd sea elitr lorem rebum</p>
-                    <div class="icons items-center justify-center">
+                    <p class="text-gray-300 leading-relaxed">
+                        Amet elitr vero magna sed ipsum sit kasd<br>
+                        sea elitr lorem rebum
+                    </p>
+
+                    <div class="flex gap-3 mt-3">
                         <i
-                            class="border-2 hover:bg-white hover:text-black w-9 h-9 p-2.5 bg-transparent text-center text-white fa-brands fa-x-twitter"></i>
+                            class="fa-brands fa-x-twitter border-2 w-10 h-10 flex items-center justify-center rounded hover:bg-white hover:text-black"></i>
                         <i
-                            class="border-2 hover:bg-white hover:text-black w-9 h-9 p-2.5 bg-transparent text-center text-white fa-brands fa-facebook"></i>
+                            class="fa-brands fa-facebook border-2 w-10 h-10 flex items-center justify-center rounded hover:bg-white hover:text-black"></i>
                         <i
-                            class="border-2 hover:bg-white hover:text-black w-9 h-9 p-2.5 bg-transparent text-center text-white fa-brands fa-linkedin"></i>
+                            class="fa-brands fa-linkedin border-2 w-10 h-10 flex items-center justify-center rounded hover:bg-white hover:text-black"></i>
                         <i
-                            class="border-2 hover:bg-white hover:text-black w-9 h-9 p-2.5 bg-transparent text-center text-white fa-brands fa-instagram"></i>
+                            class="fa-brands fa-instagram border-2 w-10 h-10 flex items-center justify-center rounded hover:bg-white hover:text-black"></i>
                     </div>
                 </div>
-                <div class="foot3">
+
+                <!-- Open Hours -->
+                <div class="space-y-3">
                     <h1 class="text-3xl font-bold">Open Hours</h1>
-                    <p class="text-base/8">Monday - Friday</p>
-                    <p class="text-base/8">8.00 AM - 8.00 PM</p>
-                    <p class="text-base/8">Saturday - Sunday</p>
-                    <p class="text-base/8">2.00 PM - 8.00 PM</p>
+                    <p class="text-gray-300">Monday - Friday</p>
+                    <p class="text-gray-300">8.00 AM - 8.00 PM</p>
+                    <p class="text-gray-300">Saturday - Sunday</p>
+                    <p class="text-gray-300">2.00 PM - 8.00 PM</p>
                 </div>
-                <div class="foot4 ">
+
+                <!-- Newsletter -->
+                <div class="space-y-3">
                     <h1 class="text-3xl font-bold">Newsletter</h1>
-                    <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
-                    <input class=" px-4 py-3 border bg-white font-black" type="text" placeholder="Enter Your Email"><Button class=" px-4 py-3 border mb text-black font-bold bg-amber-400">Sign Up</Button>
+                    <p class="text-gray-300 leading-relaxed">
+                        Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum
+                    </p>
+
+                    <div class="flex">
+                        <input type="text" placeholder="Enter Your Email"
+                            class="w-full px-4 py-3 text-black rounded-l outline-none">
+                        <button class="px-5 py-3 bg-amber-400 text-black font-bold rounded-r hover:bg-amber-500">
+                            Sign Up
+                        </button>
+                    </div>
                 </div>
+
             </div>
+
+        </div>
     </footer>
-    <div class="foot-last justify-center text-center p-3 bg-amber-950">
-            <p>Copyright © Domain. All Rights Reserved.</p>
-            <p>Designed by HTML Codex Distributed by ThemeWagon</p>
-            </div>
+
+    <div class="foot-last text-center p-3 bg-amber-950 text-white space-y-1">
+        <p>Copyright © Domain. All Rights Reserved.</p>
+        <p>Designed by HTML Codex · Distributed by ThemeWagon</p>
+    </div>
 </body>
 
 </html>

@@ -8,132 +8,191 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <style>
-        body {
-            background-color: #f2f2f2;
+        /* -------------------- */
+        /* GLOBAL RESET         */
+        /* -------------------- */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        /* -------------------- */
+        /* NAVBAR               */
+        /* -------------------- */
         .nav1 {
             background-color: black;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
             color: white;
-            justify-content: space-around;
-            padding: 0px;
-            /* border-radius: 30px; */
-            margin: 0px;
+            flex-wrap: wrap;
             position: sticky;
-            top: 0px;
-            width: 100%;
-
+            top: 0;
+            z-index: 100;
         }
 
-        h1 {
-            font-family: 'Cinzel Decorative', serif;
-            font-weight: 700;
+        .nav1 h1,
+        .nav1 h2,
+        .nav1 h3 {
+            margin: 0;
             color: #e41c1c;
-            margin-left: -100px;
-
-        }
-
-        h3 {
-            font-weight: bold;
-            cursor: pointer;
+            font-family: 'Cinzel Decorative', serif;
         }
 
         ul {
             list-style: none;
             display: flex;
-            gap: 50px;
+            gap: 25px;
+            flex-wrap: wrap;
             color: #ddd;
-            cursor: pointer;
-            margin-top: 25px;
         }
 
-        ul :hover {
+        ul li:hover {
             color: red;
+            cursor: pointer;
         }
 
+        /* -------------------- */
+        /* IMAGES               */
+        /* -------------------- */
         .img img {
             width: 100%;
-            align-items: center;
+            display: block;
         }
 
+        /* -------------------- */
+        /* PANEL ICON SECTION   */
+        /* -------------------- */
         .panel {
             display: flex;
             justify-content: space-around;
-            align-items: center;
             padding: 40px 20px;
             background: #1a1a1a;
-            margin-top: -4px;
+            flex-wrap: wrap;
         }
 
         .panel-item {
             text-align: center;
             flex: 1;
+            min-width: 180px;
+            margin: 10px 0;
         }
 
         .panel-item i {
             font-size: 40px;
-            display: block;
             margin-bottom: 10px;
             color: #ccc;
-            margin-left: 215px;
         }
 
-        .panel-item a {
-            color: #a7abaf;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .panel-item a:hover {
-            /* text-decoration: underline; */
-            color: #e41c1c;
-        }
-
+        /* -------------------- */
+        /* FOOTER TOP BAR       */
+        /* -------------------- */
         .foot-panel1 {
             background-color: #ccc;
+            padding: 15px 20px;
             display: flex;
-            border: 2px solid rgb(189, 189, 189);
-            height: 75px;
-            border-left: none;
-            border-right: none;
-
-
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #bdbdbd;
+            border-bottom: 2px solid #bdbdbd;
+            flex-wrap: wrap;
         }
 
         .foot-panel1 p {
             font-weight: bold;
-            font-size: 16px;
-            margin-top: 21px;
-            margin-left: 1100px;
         }
 
         .icon {
-            margin-top: 17px;
-            font-size: 30px;
-            gap: 40px;
-
+            display: flex;
+            gap: 20px;
+            font-size: 28px;
         }
 
         .icon a {
             color: black;
         }
 
+        /* -------------------- */
+        /* FOOTER MULTI-COLUMN  */
+        /* -------------------- */
         .foot-panel2 {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px;
-
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            padding: 30px;
         }
 
-        .foot-head1 h3 {
-            font-weight: bold;
-            font-family: "Playwrite HU", cursive;
-            font-optical-sizing: auto;
-            font-weight: weight;
-            font-style: normal;
+        .foot-panel2 h3 {
+            margin-bottom: 8px;
+        }
+
+        .foot-panel2 p {
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        /* -------------------- */
+        /* RESPONSIVENESS       */
+        /* -------------------- */
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            ul {
+                gap: 15px;
+            }
+
+            .nav1 {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .nav1 {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+            ul {
+                justify-content: center;
+            }
+
+            .panel {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .foot-panel1 {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .icon {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav1 ul li:nth-child(4),
+            .nav1 ul li:nth-child(6),
+            .nav1 ul li:nth-child(7),
+            .nav1 ul li:nth-child(9),
+            .nav1 ul li:nth-child(10),
+            .nav1 ul li:nth-child(13),
+            .nav1 ul li:nth-child(14) {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -169,19 +228,6 @@
     </div>
     <div class="img"><img src="https://i.ytimg.com/vi/MyFaV2o7uk4/maxresdefault.jpg" alt=""></div>
     <div class="nav1">
-        <h2>Upcoming Adventures</h2>
-        <ul>
-            <li>Himalayan Spirit 2025</li>
-            <li>Tour Of Bhutan 2025</li>
-            <li>Himalayan Adventure Mustang 2025</li>
-            <li>Himalayan Odyssey 2025</li>
-            <li>GT Cup 2025</li>
-            <li>Slide School Cup</li>
-            <li>Jaipur Track Experiences</li>
-        </ul>
-    </div>
-    <div class="img"><img src="https://royalenfield.com.au/wp-content/uploads/2021/06/Tribute-Banner3.jpg" alt=""></div>
-    <div class="nav1">
         <h2>Apparel</h2>
         <ul>
             <li>Royal Enfield x UM</li>
@@ -191,6 +237,19 @@
             <li>Shotgun 650</li>
             <li>Royal Enfield X Alpinestar</li>
             <li>Royal Enfield x TCX</li>
+        </ul>
+    </div>
+    <div class="img"><img src="https://royalenfield.com.au/wp-content/uploads/2021/06/Tribute-Banner3.jpg" alt=""></div>
+    <div class="nav1">
+        <h2>Upcoming Adventures</h2>
+        <ul>
+            <li>Himalayan Spirit 2025</li>
+            <li>Tour Of Bhutan 2025</li>
+            <li>Himalayan Adventure Mustang 2025</li>
+            <li>Himalayan Odyssey 2025</li>
+            <li>GT Cup 2025</li>
+            <li>Slide School Cup</li>
+            <li>Jaipur Track Experiences</li>
         </ul>
     </div>
     <div class="img"><img src="https://www.royalenfield.com/content/dam/royal-enfield/usa/home/motorcycles/meteor/desktop/homepage-banners-meteor.jpg" alt=""></div>
