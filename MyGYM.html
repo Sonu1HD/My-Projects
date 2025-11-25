@@ -7,6 +7,12 @@
     <title>My GYM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        :root {
+            --color-1: #e6e6ea;
+            --text-color: #0c0a0a;
+            --accent-color: #006aff;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -42,68 +48,213 @@
         }
 
         nav {
+            height: 70px;
+            background-color: var(--color-1);
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background-color: rgb(236, 231, 231);
-            /* padding: 0px 0px; */
-            position: relative;
         }
 
-        nav ul {
-            list-style: none;
+        .links-container {
+            height: 100%;
+            width: 100%;
             display: flex;
-            gap: 50px;
-            display: none;
+            flex-direction: row;
+            align-items: center;
         }
 
-        nav ul li a {
+        nav a {
+            height: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            color: black;
-            font-size: 15px;
+            color: var(--text-color);
             font-weight: bold;
-            transition: all .5s ease-in-out;
         }
 
-        nav ul li a:hover {
+        nav a:hover {
             color: red;
             border-bottom: 2px solid red;
         }
 
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
+        nav .home-link {
+            margin-right: 0;
         }
 
-        ul li {
-            display: inline-block;
+        #sidebar-active {
+            display: none;
+        }
+
+        .open-sidebar-button,
+        .close-sidebar-button {
+            display: none;
+        }
+
+        @media(max-width: 450px) {
+            .links-container {
+                flex-direction: column;
+                align-items: flex-start;
+
+                position: fixed;
+                top: 0;
+                right: -100%;
+                z-index: 1000;
+                /* responsive width that never exceeds viewport */
+                width: min(85vw, 260px);
+                max-width: 90vw;
+
+                background-color: var(--color-1);
+                box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+                transition: 0.35s ease-out;
+                padding-bottom: 40px;
+                overflow-y: auto;
+                height: 100vh;
+                box-sizing: border-box;
+            }
+
+            nav a {
+                box-sizing: border-box;
+                height: auto;
+                width: 100%;
+                padding: 16px 20px;
+                justify-content: flex-start;
+            }
+
+            .open-sidebar-button,
+            .close-sidebar-button {
+                padding: 14px;
+                display: block;
+                font-size: larger;
+            }
+
+            #sidebar-active:checked~.links-container {
+                right: 0;
+            }
+
+            /* overlay styling (dim the page when sidebar open) */
+            #overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                background: rgba(0, 0, 0, 0.45);
+                transition: 0.35s ease-out;
+                z-index: 900;
+            }
+
+            #sidebar-active:checked~#overlay {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        /* general links-container improvements */
+        .links-container {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Dropdown/navigation item styles */
+        .nav-item {
+            width: 100%;
+            box-sizing: border-box;
             position: relative;
         }
 
-        ul li a {
-            text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-        }
-
-        ul li ul {
-            display: none;
+        .nav-item .fi-toggle {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            border: 1px solid #ccc;
-            text-align: center;
+            opacity: 0;
+            pointer-events: none;
         }
 
-        /* ul li ul li {
-            display: block;
-        } */
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px 20px;
+            cursor: pointer;
+            user-select: none;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
 
-        ul li:hover ul {
+        .dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.2s ease;
+            padding-left: 12px;
+            background: transparent;
+        }
+
+        .dropdown-menu a {
             display: block;
+            padding: 10px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(0,0,0,0.04);
+        }
+
+        /* small icon spacing for dropdown items */
+        .dropdown-menu a i {
+            margin-right: 10px;
+            width: 18px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--accent-color);
+        }
+
+        .dropdown-toggle .caret-icon {
+            margin-left: 8px;
+            font-size: 12px;
+            opacity: 0.85;
+        }
+
+        /* when checkbox is checked, expand menu */
+        .nav-item .fi-toggle:checked + .dropdown-toggle + .dropdown-menu {
+            max-height: 400px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        /* on larger screens allow hover to open dropdown */
+        @media only screen and (min-width: 800px) {
+            .links-container {
+                position: static;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                background: none;
+                box-shadow: none;
+            }
+
+            .nav-item {
+                display: inline-block;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                background: var(--color-1);
+                border-radius: 6px;
+                box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+                max-height: 0;
+                padding: 0 8px;
+                width: max-content;
+                min-width: 180px;
+            }
+
+            .nav-item:hover .dropdown-menu {
+                max-height: 400px;
+                padding: 8px 8px;
+            }
         }
 
         nav .logo img {
@@ -193,6 +344,13 @@
         @media only screen and (min-width: 800px) {
             nav ul {
                 display: flex;
+            }
+
+            /* center links within the links-container on wide screens */
+            .links-container {
+                justify-content: center;
+                gap: 20px;
+                width: auto;
             }
 
             .bar {
@@ -423,61 +581,58 @@
             font-weight: bold;
         }
 
-        /* -------------------------------------------------------
-   GALLERY SECTION (FLEXBOX)
---------------------------------------------------------- */
+        .gallery-section {
+            padding: 50px 20px;
+            background: #fff9f9;
+            text-align: center;
+        }
 
-.gallery-section {
-    padding: 50px 20px;
-    background: #fff9f9;
-    text-align: center;
-}
+        .gallery-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
 
-.gallery-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-}
+        .gallery-line {
+            width: 120px;
+            height: 5px;
+            background: red;
+            margin: 10px auto 30px auto;
+            border-radius: 5px;
+        }
 
-.gallery-line {
-    width: 120px;
-    height: 5px;
-    background: red;
-    margin: 10px auto 30px auto;
-    border-radius: 5px;
-}
+        /* FLEX CONTAINER */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-/* FLEX CONTAINER */
-.gallery-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+        /* EACH IMAGE BOX */
+        .gallery-item {
+            width: 300px;
+            /* fixed width but wraps automatically */
+            height: 220px;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-/* EACH IMAGE BOX */
-.gallery-item {
-    width: 300px;      /* fixed width but wraps automatically */
-    height: 220px;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        /* IMAGE STYLING */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s ease;
+        }
 
-/* IMAGE STYLING */
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.4s ease;
-}
-
-/* Hover zoom effect */
-.gallery-item:hover img {
-    transform: scale(1.15);
-    opacity: 0.9;
-}
+        /* Hover zoom effect */
+        .gallery-item:hover img {
+            transform: scale(1.15);
+            opacity: 0.9;
+        }
 
 
 
@@ -519,7 +674,7 @@
             color: #f0eaea;
         }
 
-        .feedback-page form {
+        #feedbackform {
             max-width: 600px;
             margin: 0 auto;
             text-align: left;
@@ -654,23 +809,30 @@
         </div>
         <nav>
             <div class="logo"><img src="Elegant Modern Gym Logo Design.png" alt="Our Logo"></div>
-            <ul>
-                <li><a href="index.html">Get Started</a></li>
-                <li class="dropdown">
-                    <a href="MyGYM.html">Fitness Institute ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="workout.html">Workouts</a></li>
-                        <li><a href="nutrition.html">Nutrition</a></li>
-                        <li><a href="trainers.html">Trainers</a></li>
-                    </ul>
-                </li>
-                <li><a href="#Gallery-page">Gallery</a></li>
-                <li><a href="#FB-page">Contact Us</a></li>
-            </ul>
-            <div class="bar">
-                <i class="fa-solid fa-bars-staggered"></i>
+            <input type="checkbox" id="sidebar-active">
+            <label for="sidebar-active" class="open-sidebar-button">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <label id="overlay" for="sidebar-active"></label>
+            <div class="links-container">
+                <label for="sidebar-active" class="close-sidebar-button">
+                    <i class="fa-solid fa-x"></i>
+                </label>
+                <a class="home-link" href="MyGYM.html">Get Started</a>
+                <div class="nav-item">
+                    <input type="checkbox" id="fi-toggle" class="fi-toggle">
+                    <label for="fi-toggle" class="dropdown-toggle">Fitness Institute <span class="caret-icon"><i class="fa-solid fa-chevron-down"></i></span></label>
+                    <div class="dropdown-menu">
+                        <a href="MyGYM.html"><i class="fa-solid fa-circle-info"></i>Overview</a>
+                        <a href="programs.html"><i class="fa-solid fa-dumbbell"></i>Programs</a>
+                        <a href="trainers.html"><i class="fa-solid fa-user-tie"></i>Trainers</a>
+                        <a href="membership.html"><i class="fa-solid fa-id-card"></i>Memberships</a>
+                        <a href="ContactT4.html"><i class="fa-solid fa-envelope"></i>Contact</a>
+                    </div>
+                </div>
+                <a href="#Gallery-page">Gallery</a>
+                <a href="#FB-page">Contact Us</a>
             </div>
-            <button class="btn-1">Free trial</button>
         </nav>
     </header>
     <!-- <! -------------------- Banner image -------------------- > -->
@@ -740,7 +902,8 @@
 
             <!-- 🖼️ Gallery Image 2 -->
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGd5bXxlbnwwfHwwfHx8MA%3D%3D" alt="Gym Training 2">
+                <img src="https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGd5bXxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Gym Training 2">
             </div>
 
             <!-- 🖼️ Gallery Image 3 -->
@@ -760,7 +923,8 @@
 
             <!-- 🖼️ Gallery Image 6 -->
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGd5bXxlbnwwfHwwfHx8MA%3D%3D" alt="Gym 6">
+                <img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGd5bXxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Gym 6">
             </div>
 
         </div>
@@ -854,7 +1018,6 @@
                 <i class="fa-brands fa-youtube"></i>
             </div>
         </div>
-
     </footer>
 
     <div class="foot-bottom">
