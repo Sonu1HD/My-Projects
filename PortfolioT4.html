@@ -1,108 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satner</title>
+    <title>Portfolio Page</title>
     <link rel="stylesheet" href="./src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
 
+</head>
 <body>
-    <nav
-        class=" max-[600px]:text-white max-[600px]:bg-black flex p-5 backdrop-blur-2xl z-50 m-0 justify-around items-center sticky top-0">
-        <div class="logo text-2xl font-bold hover:text-sky-700 cursor-pointer">Satner</div>
-        <ul class="hidden sm:flex gap-10 flex-wrap ">
-            <li><a href="Tailwind4.html">Home</a></li>
-            <li><a href="aboutT4.html">About</a></li>
-            <li><a href="ServicesT4.html">Services</a></li>
-            <li><a href="PortfolioT4.html">Portfolio</a></li>
-            <li><a href="ContactT4.html">Contact</a></li>
-        </ul>
-        <div class="bar sm:hidden"><i class="fa-solid fa-bars"></i></div>
-    </nav>
-    <div id="overlay" class="fixed inset-0 bg-black/50 hidden transition-opacity duration-500"></div>
-    <ul id="mobileMenu"
-        class="sm:hidden hidden text-right w-[200px] fixed z-10 h-screen flex-col gap-5 bg-black text-white p-5 transition-all duration-500">
-        <li class="mt-5 text-xl text-center"><a href="Tailwind4.html">Home</a></li>
-        <li class="mt-5 text-xl text-center"><a href="aboutT4.html">About</a></li>
-        <li class="mt-5 text-xl text-center"><a href="ServicesT4.html">Services</a></li>
-        <li class="mt-5 text-xl text-center"><a href="PortfolioT4.html">Portfolio</a></li>
-        <li class="mt-5 text-xl text-center"><a href="ContactT4.html">Contact</a></li>
-    </ul>
-    <Section>
-        <div class="heroSection flex flex-col-reverse items-center text-center md:flex-row m-2 justify-around ">
-            <div class="md:text-start text ms-4 font-bold">
-                <h1 class="text-3xl font-bold">Hello</h1>
-                <h1 class="text-2xl sm:text-7xl">I am rahi satner</h1>
-                <p class="text-xl  sm:text-2xl">senior wordpress developer</p>
-                <button class="mt-3 bg-linear-to-r/srgb from-indigo-500 to-teal-400 p-2 rounded-2xl">Hire Me</button>
-                <button class=" hover:bg-linear-to-r/srgb from-indigo-500 to-teal-400 text-black p-2 rounded-md">Get CV
-                </button>
-            </div>
-            <img class="w-[300px] rounded-2xl md:w-[500px]"
-                src="https://themewagon.github.io/satner/img/banner/home-right.png" alt="image">
-        </div>
-    </Section>
-    <section>
-        <div
-            class="heroSection heroSection flex flex-col-reverse items-center text-center md:flex-row md:text-start m-2">
-            <img class="w-[300px] rounded-2xl md:w-[500px]" src="https://themewagon.github.io/satner/img/about-us.png"
-                alt="image">
-            <div class="hero-Text text ms-4 font-bold gap-2.5">
-                <h1 class="text-3xl">let’s
-                    Introduce about
-                    myself</h1>
-                <p class="text-gray-400">Whose given. Were gathered. There first subdue greater. Bearing you Whales
-                    heaven midst their. Beast
-                    creepeth. Fish days.</p>
-                <p class="text-gray-400">Is give may shall likeness made yielding spirit a itself together created after
-                    sea is in beast
-                    beginning signs open god you're gathering whose gathered cattle let. Creature whales fruit unto meat
-                    the life beginning all in under give two.</p>
-                <button class="mt-2.5 bg-linear-to-r/decreasing from-indigo-500 to-teal-400 p-2 rounded-md">Download
-                    CV</button>
+    <div
+        class="Sub-box bg-[url(https://themewagon.github.io/satner/img/subscribe-bg.png)] bg-cover bg-center flex justify-center items-center m-4 p-6 sm:m-12 sm:p-16">
+
+        <div class="text-sec w-full max-w-2xl text-center flex flex-col items-center">
+
+            <h1 class="text-5xl text-center text-white font-bold uppercase">Portfolio</h1>
+            <div class="text-white hover:font-bold">
+                <a href="Tailwind4.html">Home</a>
+                <a href="PortfolioT4.html">Portfolio</a>
             </div>
         </div>
-    </section>
-    <section class="py-16 bg-gray-50">
-        <div class="hero text-center max-w-3xl mx-auto px-4">
-            <h1 class="text-3xl font-bold text-gray-800 mb-4 uppercase">service offers</h1>
-            <p class="text-gray-500 leading-relaxed">Is give may shall likeness made yielding spirit a itself togeth
-                created after sea
-                is in beast beginning signs open god you're gathering ithe</p>
-            <div class="flex flex-wrap items-center justify-center gap-6 pt-12">
-                <div class="box bg-white shadow-md hover:shadow-lg transition rounded-lg p-8 max-w-xs text-center">
-                    <img class="mx-auto mb-4 w-14 h-14" src="https://themewagon.github.io/satner/img/services/s1.png"
-                        alt="WP Developing">
-                    <h2 class="text-lg font-bold text-gray-800 mb-2">WP DEVELOPING</h2>
-                    <p class="text-gray-500 text-sm">
-                        Creeping for female light years that lesser can't evening heaven isn't bearing tree
-                    </p>
-                </div>
-                <div class="box bg-white shadow-md hover:shadow-lg transition rounded-lg p-8 max-w-xs text-center">
-                    <img class="mx-auto mb-4 w-14 h-14" src="https://themewagon.github.io/satner/img/services/s2.png"
-                        alt="">
-                    <h1>UI/ux design</h1>
-                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
-                </div>
-                <div class="box bg-white shadow-md hover:shadow-lg transition rounded-lg p-8 max-w-xs text-center">
-                    <img class="mx-auto mb-4 w-14 h-14" src="https://themewagon.github.io/satner/img/services/s3.png"
-                        alt="">
-                    <h1>Web design</h1>
-                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
-                </div>
-                <div class="box bg-white shadow-md hover:shadow-lg transition rounded-lg p-8 max-w-xs text-center">
-                    <img class="mx-auto mb-4 w-14 h-14" src="https://themewagon.github.io/satner/img/services/s4.png"
-                        alt="">
-                    <h1>seo optimize</h1>
-                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    </div>
     <section class="m-2 p-8 justify-around items-center">
         <div class="text-sec mb-10 uppercase">
             <h1 class="text-xl font-bold sm:text-4xl">quality work</h1>
@@ -261,25 +180,7 @@
             <i class="text-2xl text-black bg-transparent text-center fa-brands fa-linkedin"></i>
             <i class="text-2xl text-black bg-transparent text-center fa-brands fa-instagram"></i>
         </div>
-        <p class="mb-9">Copyright ©2025 All rights reserved | This template is made with by Colorlib</p>
+        <p class="mb-9">Copyright ©2025 All rights reserved | This template is made with  by Colorlib</p>
     </footer>
-    <script>
-        const bar = document.querySelector(".bar");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const overlay = document.getElementById('overlay')
-
-        bar.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-            bar.innerHTML = mobileMenu.classList.contains("hidden")
-                ? `<i class="fa-solid fa-bars"></i>`
-                : `<i class="fa-solid fa-xmark"></i>`;
-            overlay.classList.toggle("hidden");
-            bar.innerHTML = overlay.classList.contains("hidden")
-                ? `<i class="fa-solid fa-bars"></i>`
-                : `<i class="fa-solid fa-xmark"></i>`;
-        });
-    </script>
-
 </body>
-
 </html>
